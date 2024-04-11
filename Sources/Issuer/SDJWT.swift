@@ -23,9 +23,9 @@ struct SDJWT {
 
   // MARK: - Properties
 
-  public var jwt: JWT
-  public var disclosures: [Disclosure]
-  public var kbJwt: JWT?
+  var jwt: JWT
+  var disclosures: [Disclosure]
+  var kbJwt: JWT?
 
   // MARK: - Lifecycle
 
@@ -69,9 +69,10 @@ public struct SignedSDJWT {
 
   // MARK: - Properties
 
-  let jwt: JWS
-  var disclosures: [Disclosure]
-  var kbJwt: JWS?
+    public let jwt: JWS
+
+    public private(set) var disclosures: [Disclosure]
+    public private(set) var kbJwt: JWS?
 
   var delineatedCompactSerialisation: String {
     let separator = "~"
