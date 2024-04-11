@@ -71,8 +71,8 @@ public struct SignedSDJWT {
 
     public let jwt: JWS
 
-    public private(set) var disclosures: [Disclosure]
-    public private(set) var kbJwt: JWS?
+    public internal(set) var disclosures: [Disclosure]
+    public internal(set) var kbJwt: JWS?
 
   var delineatedCompactSerialisation: String {
     let separator = "~"
