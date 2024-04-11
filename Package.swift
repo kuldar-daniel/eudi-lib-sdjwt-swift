@@ -19,7 +19,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/SwiftyJSON/SwiftyJSON.git", from: "5.0.1"),
-        .package(url: "https://github.com/airsidemobile/JOSESwift.git", from: "2.3.0")
+        .package(url: "https://github.com/niscy-eudiw/JOSESwift.git", from: "2.4.1")
     ],
     targets: [
         .target(
