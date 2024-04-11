@@ -23,9 +23,9 @@ struct SDJWT {
 
   // MARK: - Properties
 
-  var jwt: JWT
-  var disclosures: [Disclosure]
-  var kbJwt: JWT?
+  public var jwt: JWT
+  public var disclosures: [Disclosure]
+  public var kbJwt: JWT?
 
   // MARK: - Lifecycle
 
@@ -193,16 +193,15 @@ public struct SignedSDJWT {
 }
 
 extension SignedSDJWT {
-  func serialised(serialiser: (SignedSDJWT) -> (SerialiserProtocol)) throws -> Data {
+  public func serialised(serialiser: (SignedSDJWT) -> (SerialiserProtocol)) throws -> Data {
     serialiser(self).data
   }
 
-  func serialised(serialiser: (SignedSDJWT) -> (SerialiserProtocol)) throws -> String {
+  public func serialised(serialiser: (SignedSDJWT) -> (SerialiserProtocol)) throws -> String {
     serialiser(self).serialised
   }
 
-  func recreateClaims() throws -> ClaimExtractorResult {
+  public func recreateClaims() throws -> ClaimExtractorResult {
     return try self.toSDJWT().recreateClaims()
   }
-
 }
