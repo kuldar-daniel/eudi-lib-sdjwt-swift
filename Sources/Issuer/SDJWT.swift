@@ -194,10 +194,6 @@ public struct SignedSDJWT {
 }
 
 extension SignedSDJWT {
-  public func serialised(serialiser: (SignedSDJWT) -> (SerialiserProtocol)) throws -> Data {
-    serialiser(self).data
-  }
-
   public func serialised(serialiser: (SignedSDJWT) -> (SerialiserProtocol)) throws -> String {
     serialiser(self).serialised
   }
